@@ -1,9 +1,13 @@
 
 #body {
 	color:#fff;
-	background: #000;
+	background: #2c3e50;
 }
 
 h1 {
 	font-size: 4.5em;
+}
+
+#wIcon {
+	width : 25%;
 }

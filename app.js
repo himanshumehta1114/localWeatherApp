@@ -12,8 +12,8 @@ if(navigator.geolocation){
 		console.log("geo location is available");
 		navigator.geolocation.getCurrentPosition(function(position){
 			lat = "lat=" + position.coords.latitude;
-			lon = "lon=" + positionhttps://cdn.glitch.com/6e8889e5-7a72-48f0-a061-863548450de5%2F50d.png?1499366021771.coords.longitude;
-	
+			lon = "lon=" + position.coords.longitude;
+
 			API = url + lat + "&" + lon;
 			console.log(API);
 			$.getJSON(API,function(location){
@@ -28,8 +28,15 @@ if(navigator.geolocation){
 
 				$("#tempUnit").click(function(){
 					var currentTemp = $('#tempUnit').text();
-					
-				});
+					var newTempUnit = currentTemp == "C"? "F" : "C";
+					$("#tempUnit").text(newTempUnit);
+					if(newTempUnit == "F"){
+						var Ftemp = Math.round(temp*9/5 +32);
+						$('#temp').text(Ftemp);
+					}else{
+						$('#temp').text(temp);
+					}
+				});	
 			});
 
 		});
