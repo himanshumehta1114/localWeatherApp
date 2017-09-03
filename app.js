@@ -8,6 +8,7 @@
 	var country = "";
 	var desc = "";
 	var tempUnit = "C";
+	var wIcon = "";
 if(navigator.geolocation){
 		console.log("geo location is available");
 		navigator.geolocation.getCurrentPosition(function(position){
@@ -21,11 +22,12 @@ if(navigator.geolocation){
 				city = location['name'];
 				country = location['sys']['country'];
 				desc = location.weather[0].main;
+				wIcon = location.weather[0].icon;
 				$("#temp").html(temp);
 				$("#city").html(city);
 				$("#country").html(country);
 				$('#desc').html(desc);
-
+				$('#wIcon').attr('src',wIcon);
 				$("#tempUnit").click(function(){
 					var currentTemp = $('#tempUnit').text();
 					var newTempUnit = currentTemp == "C"? "F" : "C";

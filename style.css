@@ -1,7 +1,7 @@
 
 #body {
 	color:#fff;
-	background: #2c3e50;
+	background: #472E32;
 }
 
 h1 {
@@ -10,4 +10,10 @@ h1 {
 
 #wIcon {
 	width : 25%;
+}
+
+#tempUnit {
+	color : blue;
+	cursor: pointer;
+	text-decoration: underline;
 }
